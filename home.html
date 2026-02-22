@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Professional Resume Builder</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-file-alt brand-icon"></i>
+                <span class="brand-name">Resume Builder</span>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-btn" onclick="showLogin()">Login</button>
+                <button class="nav-btn primary" onclick="showSignup()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Resume Builders</h1>
+            <p class="hero-quote">Your career deserves more than a template – it deserves a story</p>
+            <p class="hero-subtitle">Create professional resumes with photo support, QR codes for projects, Choose a template and export in multiple formats</p>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fas fa-star"></i>
+                    <span>Professional Design</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QR Code Portfolio</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-image"></i>
+                    <span>Photo Support</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-download"></i>
+                    <span>Multiple Templates</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-download"></i>
+                    <span>Multiple Formats</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <button class="btn-hero primary" onclick="createResume()">Create Resume</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+  <div class="resume-preview-mockup">
+    
+    <!-- Sidebar -->
+    <div class="resume-sidebar">
+      <div class="profile-pic">
+  <img src="man-empty-avatar-casual-business-style-vector-photo-placeholder-social-networks-resumes_885953-434.avif" alt="Profile">
+</div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-line short"></div>
+        <div class="sidebar-line"></div>
+        <div class="sidebar-line"></div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-line medium"></div>
+        <div class="sidebar-line short"></div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="resume-main">
+      <div class="mockup-header"></div>
+
+      <div class="mockup-content">
+
+  <!-- SECTION 1 -->
+  <div class="mockup-heading"></div>
+  <div class="mockup-line patterned medium"></div>
+  <div class="mockup-line patterned"></div>
+  <div class="mockup-line patterned short"></div>
+
+  <div class="section-gap"></div>
+
+  <!-- SECTION 2 -->
+  <div class="mockup-heading"></div>
+  <div class="mockup-line patterned medium"></div>
+  <div class="mockup-line patterned"></div>
+  <div class="mockup-line patterned short"></div>
+
+  <div class="section-gap"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </section>
+   <!-- ===== AUTO IMAGE SLIDER ===== -->
+<section class="auto-slider-section">
+  <h2 class="auto-slider-title">Our Resume Templates</h2>
+
+  <div class="auto-slider-container">
+    <div class="auto-slider-track">
+
+      <div class="auto-slide"><img src="img.png"></div>
+      <div class="auto-slide"><img src="img1.png"></div>
+      <div class="auto-slide"><img src="r2.png"></div>
+      <div class="auto-slide"><img src="r3.png"></div>
+      
+      <div class="auto-slide"><img src="img.png"></div>
+      <div class="auto-slide"><img src="r2.png"></div>
+      <div class="auto-slide"><img src="r3.png"></div>
+      <div class="auto-slide"><img src="img1.png"></div>
+    </div>
+  </div>
+</section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Resume Builder?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 align="center">Smart Optimization</h3>
+                    <p align="center">Our templates are designed with industry best practices for maximum impact</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 align="center">Professional Photos</h3>
+                    <p align="center">Add your professional headshot with automatic cropping and optimization</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3 align="center">Portfolio QR Codes</h3>
+                    <p align="center">Generate QR codes for your projects, making it easy for recruiters to view your work</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3 align="center">Multiple Templates and  Export Options</h3>
+                    <p align="center">Choose a Template and Download in PDF, HTML, or Word format with professional styling</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 align="center">Mobile Responsive</h3>
+                    <p align="center">Create and edit your resume on any device, anywhere, anytime</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 align="center">Auto-Save</h3>
+                    <p align="center">Never lose your progress with automatic saving every 30 seconds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn-auth primary">Sign In</button>
+                <div class="auth-links">
+                    <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+                    <span>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Your Account</h2>
+                <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            </div>
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-auth primary">Create Account</button>
+                <div class="auth-links">
+                    <span>Already have an account? <a href="#" onclick="switchToLogin()">Sign in</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Resume Builder</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resume Builder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>

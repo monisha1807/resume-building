@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  
+   
+   <style>.resume-container {
+    margin: 0 auto;
+}
+.pdf-export body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <h1><i class="fas fa-file-alt"></i> Resume Builder</h1>
+                    <p>Create professional resumes with photos and portfolio QR codes</p>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-logout" id="logoutBtn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'personal-info')">Personal Info</button>
+            <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+            <button class="tab-button" onclick="openTab(event, 'education')">Education</button>
+            <button class="tab-button" onclick="openTab(event, 'skills')">Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'preview')">Preview</button>
+        </div>
+
+        <!-- Personal Information Tab -->
+        <div id="personal-info" class="tab-content active">
+            <h2>Personal Information</h2>
+            
+            <!-- Photo Upload Section -->
+            <div class="photo-section">
+                <div class="photo-upload-container">
+                    <div class="photo-preview">
+                        <img id="photoPreview" src="" alt="Profile Photo" style="display: none;">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <span>Add Photo</span>
+                        </div>
+                    </div>
+                    <div class="photo-controls">
+                        <input type="file" id="photoInput" onchange="handlePhotoUpload(event)" accept="image/*" style="display: none;">
+                        <button type="button" class="btn-photo" onclick="document.getElementById('photoInput').click()">
+                            <i class="fas fa-upload"></i> Upload Photo
+                        </button>
+                        <button type="button" class="btn-photo remove" id="removePhotoBtn" onclick="removePhoto()" style="display: none;">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <small>Professional headshot recommended (JPG, PNG, max 5MB)</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="City, State">
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile</label>
+                    <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+                <div class="form-group">
+                    <label for="github">GitHub Profile</label>
+                    <input type="url" id="github" placeholder="https://github.com/yourusername">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="summary">Professional Summary</label>
+                <textarea id="summary" rows="4" placeholder="Brief professional summary highlighting your key qualifications"></textarea>
+            </div>
+        </div>
+
+        <!-- Experience Tab -->
+        <div id="experience" class="tab-content">
+            <h2>Work Experience</h2>
+            <div id="experience-container">
+                <div class="experience-item">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Job Title *</label>
+                            <input type="text" class="job-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Company *</label>
+                            <input type="text" class="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="month" class="start-date">
+                        </div>
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="month" class="end-date">
+                            <label><input type="checkbox" class="current-job"> Current Position</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Responsibilities & Achievements</label>
+                        <textarea class="job-description" rows="4" placeholder="• Describe your key responsibilities and achievements&#10;• Use bullet points for better readability&#10;• Include quantifiable results where possible"></textarea>
+                    </div>
+                    <button type="button" class="remove-btn" onclick="removeExperience(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" class="add-btn" onclick="addExperience()">+ Add Experience</button>
+        </div>
+
+        <!-- Education Tab -->
+        <div id="education" class="tab-content">
+            <h2>Education</h2>
+            <div id="education-container">
+                <div class="education-item">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Degree *</label>
+                            <input type="text" class="degree" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Institution *</label>
+                            <input type="text" class="institution" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Graduation Year</label>
+                            <input type="number" class="graduation-year" min="1900" max="2030">
+                        </div>
+                        <div class="form-group">
+                            <label>GPA (Optional)</label>
+                            <input type="text" class="gpa" placeholder="3.5/4.0">
+                        </div>
+                    </div>
+                    <button type="button" class="remove-btn" onclick="removeEducation(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" class="add-btn" onclick="addEducation()">+ Add Education</button>
+        </div>
+
+        <!-- Skills Tab -->
+        <div id="skills" class="tab-content">
+            <h2>Skills</h2>
+            <div class="form-group">
+                <label for="technical-skills">Technical Skills</label>
+                <textarea id="technical-skills" rows="3" placeholder="Enter skills separated by commas (e.g., JavaScript, Python, React, Node.js)"></textarea>
+                <small>Separate skills with commas for better organization</small>
+            </div>
+            <div class="form-group">
+                <label for="soft-skills">Soft Skills</label>
+                <textarea id="soft-skills" rows="3" placeholder="Enter soft skills separated by commas (e.g., Leadership, Communication, Problem Solving)"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="certifications">Certifications</label>
+                <textarea id="certifications" rows="3" placeholder="List your certifications (e.g., AWS Certified Developer, PMP, Google Analytics)"></textarea>
+            </div>
+        </div>
+
+        <!-- Projects Tab -->
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <div id="projects-container">
+                <div class="project-item">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Project Name *</label>
+                            <input type="text" class="project-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Link</label>
+                            <input type="url" class="project-link" placeholder="https://github.com/username/project">
+                        </div>
+                        <div class="form-group">
+                            <label>Technologies Used</label>
+                            <input type="text" class="project-tech" placeholder="e.g., React, Node.js, MongoDB">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea class="project-description" rows="3" placeholder="Describe the project, your role, and key achievements"></textarea>
+                    </div>
+                    <div class="project-qr-container">
+                        <canvas class="project-qr-code" width="150" height="150"></canvas>
+                        <button type="button" class="generate-qr-btn" onclick="generateProjectQR(this)">Generate QR Code</button>
+                    </div>
+                    <button type="button" class="remove-btn" onclick="removeProject(this)">Remove</button>
+                </div>
+            </div>
+            <button type="button" class="add-btn" onclick="addProject()">+ Add Project</button>
+        </div>
+
+        <!-- Preview Tab -->
+        <div id="preview" class="tab-content">
+            <h2>Resume Preview</h2>
+            <div class="preview-actions">
+                 <select id="resumeTheme" >
+                    <option value="modern">Modern Professional</option>
+                    <option value="sidebar">Sidebar Executive</option>
+                    <option value="creative">Creative Designer</option>
+                    <option value="ats">ATS Friendly</option>
+                </select>
+                <button type="button" class="btn-primary" onclick="generatePreview()">
+                    <i class="fas fa-sync-alt"></i> Generate Preview
+                </button>
+                
+                <button type="button" class="btn-secondary" onclick="downloadResume('pdf')">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </button>
+                <button type="button" class="btn-secondary" onclick="downloadResume('html')">
+                    <i class="fas fa-file-code"></i> Download HTML
+                </button>
+                <button type="button" class="btn-secondary" onclick="downloadResume('docx')">
+                    <i class="fas fa-file-word"></i> Download Word
+                </button>
+                <button type="button" class="btn-secondary" onclick="saveResume(this)">
+                    <i class="fas fa-save"></i> Save Resume
+                </button>
+            </div>
+            <div id="resume-preview" class="resume-output resume-container">
+                <!-- Generated resume will appear here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Simple check to make jsPDF available globally
+        window.addEventListener('load', function() {
+            if (typeof window.jspdf !== 'undefined' && window.jspdf.jsPDF) {
+                window.jsPDF = window.jspdf.jsPDF;
+            }
+            console.log('jsPDF ready:', typeof window.jsPDF === 'function');
+        });
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

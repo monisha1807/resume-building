@@ -1,0 +1,904 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+}
+
+.brand h1 i {
+    margin-right: 10px;
+}
+
+.brand p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-greeting {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.btn-logout {
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.tab-button.active {
+    background: #667eea;
+    color: white;
+    border-bottom-color: #5a67d8;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group small {
+    margin-top: 0.25rem;
+    color: #718096;
+    font-size: 0.875rem;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+/* Photo Upload Styles */
+.photo-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #667eea;
+}
+
+.photo-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.photo-preview {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.photo-placeholder i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #cbd5e0;
+}
+
+.photo-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-photo {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #667eea;
+    color: white;
+}
+
+.btn-photo:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.btn-photo.remove {
+    background: #e53e3e;
+}
+
+.btn-photo.remove:hover {
+    background: #c53030;
+}
+
+.photo-controls small {
+    color: #718096;
+    font-size: 0.8rem;
+}
+
+/* Experience, Education, and Project Items */
+.experience-item,
+.education-item,
+.project-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+    position: relative;
+}
+
+/* Buttons */
+.add-btn,
+.remove-btn,
+.btn-primary,
+.btn-secondary,
+.generate-qr-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.add-btn,
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.add-btn:hover,
+.btn-primary:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+.remove-btn {
+    background: #fed7d7;
+    color: #e53e3e;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.remove-btn:hover {
+    background: #feb2b2;
+}
+
+.generate-qr-btn {
+    background: #48bb78;
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
+
+.generate-qr-btn:hover {
+    background: #38a169;
+}
+
+/* Project QR Code Container */
+.project-qr-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.project-qr-code {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    display: none;
+}
+
+.project-qr-code.visible {
+    display: block;
+}
+
+/* Preview Actions */
+.preview-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Resume Output Styles */
+
+.modern-template {
+    background: white;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.modern-header {
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.sidebar-template {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.sidebar-left {
+    background: #2d3748;
+    color: white;
+    padding: 30px;
+}
+
+.sidebar-right {
+    padding: 40px;
+}
+.creative-template {
+    font-family: 'Poppins', sans-serif;
+    padding: 40px;
+}
+
+.creative-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 10px;
+}
+.ats-template {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.ats-template h2 {
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+#resumeTheme{
+    background: whitesmoke;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: black;
+    border-radius: 10px;
+}
+
+.modern-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modern-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+.sidebar-photo img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.creative-header {
+    text-align: center;
+}
+
+.creative-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 4px solid #ddd;
+}
+.ats-photo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+
+.resume-template.modern .resume-header {
+    background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
+    color: white;
+}
+
+.resume-template.modern .resume-section h2 {
+    color: #0396FF;
+    border-bottom: 2px solid #0396FF;
+}
+.resume-template.minimal {
+    font-family: Arial, sans-serif;
+}
+
+.resume-template.minimal .resume-header {
+    background: none;
+    color: #222;
+    border-bottom: 2px solid #333;
+}
+
+.resume-template.minimal .resume-section h2 {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.resume-template.minimal .skill-category {
+    border-left: 3px solid #333;
+}
+.resume-template.dark {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+.resume-template.dark .resume-header {
+    background: #111;
+    color: #fff;
+}
+
+.resume-template.dark .resume-section h2 {
+    color: #4da6ff;
+    border-bottom: 2px solid #4da6ff;
+}
+
+.resume-template.dark .resume-item h3,
+.resume-template.dark .company,
+.resume-template.dark .institution {
+    color: #ffffff;
+}
+
+.resume-template.dark .skill-category {
+    background: #2a2a2a;
+    border-left: 3px solid #4da6ff;
+}
+
+.resume-output {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    min-height: 400px;
+}
+
+.resume-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.resume-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.resume-header-content {
+    flex: 1;
+}
+
+.resume-header h1 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+    color: #0396FF;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0396FF;
+    padding-bottom: 5px;
+}
+
+.resume-item {
+    margin-bottom: 1.5rem;
+}
+
+.resume-item h3 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+}
+
+.resume-item .company,
+.resume-item .institution {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.resume-item .date {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-item .description {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.resume-item .description ul {
+    margin-left: 1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+}
+
+.skill-category h4 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.skill-list {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.project-qr {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Add these new styles for the modern resume layout */
+.modern-resume {
+    background: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+    position: relative;
+    background: linear-gradient(135deg, #0396FF 0%, #0D47A1 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.profile-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.resume-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h2 {
+    color: #0396FF;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0396FF;
+    padding-bottom: 5px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #0396FF;
+    width: 20px;
+}
+
+/* Project section with QR codes */
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.project-qr {
+    width: 100px;
+    height: 100px;
+    background: white;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        border-bottom: 1px solid #e2e8f0;
+        border-radius: 0;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .preview-actions {
+        flex-direction: column;
+    }
+    
+    .photo-upload-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .resume-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .remove-btn {
+        position: static;
+        margin-top: 1rem;
+    }
+    
+    .project-qr-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .tab-content {
+        padding: 1rem;
+    }
+}
+
+/* Print Styles for Resume */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .tabs,
+    .preview-actions {
+        display: none;
+    }
+    
+    .resume-output {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .tab-content {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+    }
+}
